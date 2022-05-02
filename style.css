@@ -1,0 +1,749 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Raleway:wght@800&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: hsl(243, 87%, 12%);
+  margin: 6rem 0 0 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Raleway", sans-serif;
+  line-height: 1.2;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: calc(100% - 4rem);
+}
+
+/* @@@@@@@@@@@@@@@@@@ header @@@@@@@@@@@@@@@@@ */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #fff;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6rem;
+}
+
+.nav__list {
+  display: flex;
+  column-gap: 4rem;
+}
+
+.nav__logo {
+  display: block;
+}
+
+.nav__link {
+  display: block;
+  font-weight: bold;
+  color: hsl(243, 87%, 12%);
+}
+
+.nav__link::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: hsl(224, 93%, 58%);
+  transition: 0.4s;
+}
+
+.nav__link:hover::after {
+  width: 100%;
+}
+
+/* @@@@@@@@@@@@@@@@@@ home @@@@@@@@@@@@@@@@@ */
+.home__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  height: calc(100vh - 6rem);
+  align-items: center;
+}
+
+.home__data {
+  display: grid;
+  gap: 2rem;
+}
+
+.home__title {
+  font-size: 2.6rem;
+}
+
+.home__form {
+  display: grid;
+  grid-template-columns: 1.5fr 0.7fr;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 90%;
+}
+
+.focus-input {
+  font-family: inherit;
+  width: 100%;
+  padding: 0.65rem;
+  border-radius: 0.2rem;
+  border: solid 0.5px #000;
+  outline: none;
+}
+
+::placeholder {
+  opacity: 0.5;
+}
+
+.focus-sub {
+  display: none;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  color: hsl(224, 93%, 58%);
+}
+
+.focus-box:focus-within .focus-input {
+  border: solid 0.5px hsl(224, 93%, 58%);
+}
+
+.focus-box:focus-within .focus-sub {
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  background-color: hsl(224, 93%, 58%);
+  color: #fff;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+button:hover {
+  background-color: hsl(224, 93%, 68%);
+}
+
+/* @@@@@@@@@@@@@@@@@@ team @@@@@@@@@@@@@@@@@ */
+.top-bg {
+  background: url("./images/bg-curve-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: 100vw 114px;
+  width: 100vw;
+  height: 114px;
+}
+
+.team {
+  background-color: hsl(240, 75%, 98%);
+  padding: 2rem 0 5rem;
+}
+
+.team__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  align-items: center;
+}
+
+.team__data {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.team__title {
+  font-size: 2.5rem;
+}
+
+.team__description {
+  color: hsl(238, 22%, 44%);
+}
+
+a.team__link {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  width: fit-content;
+  color: hsl(170, 45%, 43%);
+  border-bottom: solid 1.5px hsl(170, 45%, 43%);
+  transition: 0.3s;
+}
+
+.team__link:hover {
+  opacity: 0.7;
+}
+
+.testimonial {
+  display: grid;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 70%;
+  margin-top: 1rem;
+}
+
+.testiomnial__quotes {
+  width: 15px;
+}
+
+.testimonial__description {
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.testimonial__box {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.testimonial__box img {
+  width: 35px;
+  border-radius: 2rem;
+}
+
+.testimonial__box div {
+  display: grid;
+  gap: 0.1rem;
+}
+.testimonial__box h3 {
+  font-size: 0.8rem;
+}
+.testimonial__box span {
+  font-size: 0.6rem;
+}
+
+/* @@@@@@@@@@@@@@@@@@ contact @@@@@@@@@@@@@@@@@ */
+.contact {
+  background-color: hsl(238, 22%, 44%);
+  color: #fff;
+  padding: 5rem 0;
+}
+
+.contact__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10rem;
+}
+
+.contact__title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact__description {
+  font-size: 0.95rem;
+}
+
+.contact__form .focus-box {
+  margin-bottom: 1rem;
+}
+
+.contact__form .focus-input {
+  padding: 0.7rem;
+  border: none;
+  outline: none;
+}
+
+.contact__form .focus-sub {
+  color: #fff;
+}
+
+.contact__form .focus-box:focus-within .focus-input {
+  border: solid 0.5px #fff;
+}
+
+.contact__form button {
+  font-size: 0.75rem;
+  width: 40%;
+}
+
+/* @@@@@@@@@@@@@@@@@@ footer @@@@@@@@@@@@@@@@@ */
+footer {
+  background-color: hsl(243, 87%, 12%);
+  padding: 4rem 0 5rem;
+  position: relative;
+}
+
+.footer__logo svg {
+  width: 120px;
+  margin-bottom: 1rem;
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+}
+
+.footer__box a {
+  font-size: 0.9rem;
+  color: hsl(240, 75%, 98%);
+  transition: 0.4s;
+  display: flex;
+  width: fit-content;
+}
+
+.footer__box a:hover {
+  color: hsl(224, 93%, 58%);
+}
+
+.footer__box ul {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.footer__conectiv {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer__conectiv i {
+  font-size: 1.2rem;
+}
+
+.footer__box .footer__social {
+  display: flex;
+  column-gap: 1rem;
+}
+
+.footer__box .footer__social a {
+  padding: 0.3rem;
+  border: solid 0.5px hsl(240, 75%, 98%);
+  border-radius: 2rem;
+}
+
+.footer__box .footer__social a:hover {
+  border: solid 0.5px hsl(224, 93%, 58%);
+}
+
+.footer__copy {
+  position: absolute;
+  bottom: 0.2rem;
+  left: 0;
+  right: 0;
+  max-width: 350px;
+  font-size: 0.6rem;
+  color: #fff;
+  margin: auto;
+  text-align: center;
+}
+
+.footer__copy a {
+  color: hsl(224, 93%, 58%);
+  font-size: 0.6rem;
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@  responsive  @@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+@media (max-width: 992px) {
+  /* @@@@@@@@@@@@@@@@@@ header @@@@@@@@@@@@@@@@@ */
+  .nav__list {
+    column-gap: 3rem;
+  }
+
+  .nav__logo {
+    width: 140px;
+  }
+
+  .nav__link {
+    font-size: 0.9rem;
+  }
+
+  /* @@@@@@@@@@@@@@@@@@ home @@@@@@@@@@@@@@@@@ */
+
+  .home__title {
+    font-size: 2rem;
+  }
+
+  button {
+    white-space: nowrap;
+  }
+
+  /* @@@@@@@@@@@@@@@@@@ team @@@@@@@@@@@@@@@@@ */
+
+  .team__container {
+    gap: 2rem;
+  }
+
+  .team__data {
+    gap: 1.2rem;
+  }
+
+  .team__title {
+    font-size: 2rem;
+  }
+
+  .team__description {
+    font-size: 0.9rem;
+  }
+
+  a.team__link {
+    font-size: 0.9rem;
+  }
+
+  .testimonial {
+    gap: 0.8rem;
+    padding: 1.3rem;
+    width: 80%;
+  }
+
+  .testiomnial__quotes {
+    width: 15px;
+  }
+
+  .testimonial__description {
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .testimonial__box {
+    column-gap: 0.8rem;
+  }
+
+  .testimonial__box img {
+    width: 30px;
+  }
+
+  .testimonial__box h3 {
+    font-size: 0.7rem;
+  }
+
+  /* @@@@@@@@@@@@@@@@@@ contact @@@@@@@@@@@@@@@@@ */
+  .contact__container {
+    gap: 5rem;
+  }
+
+  .contact__form button {
+    font-size: 0.7rem;
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    margin: 5rem 0 0 0;
+  }
+
+  /* @@@@@@@@@@@@@@@@@@ header @@@@@@@@@@@@@@@@@ */
+  .nav {
+    height: 5rem;
+  }
+
+  .nav__list {
+    column-gap: 2rem;
+  }
+
+  .nav__logo {
+    width: 120px;
+  }
+
+  .nav__link {
+    font-size: 0.8rem;
+  }
+
+  /* @@@@@@@@@@@@@@@@@@ home @@@@@@@@@@@@@@@@@ */
+  .home__container {
+    gap: 2rem;
+    height: calc(100vh - 5rem);
+  }
+
+  .home__data {
+    gap: 1rem;
+  }
+
+  .home__title {
+    font-size: 1.4rem;
+  }
+  .home__description {
+    font-size: 0.8rem;
+  }
+
+  .home__form {
+    grid-template-columns: 1.5fr 0.5fr;
+    gap: 0.5rem;
+  }
+
+  .focus-input {
+    padding: 0.55rem;
+    font-size: 0.6rem;
+  }
+
+  .focus-sub {
+    font-size: 0.6rem;
+  }
+
+  button {
+    font-size: 0.6rem;
+    padding: 0.6rem;
+  }
+
+  /* @@@@@@@@@@@@@@@@@@ team @@@@@@@@@@@@@@@@@ */
+  .team__container {
+    gap: 1.5rem;
+  }
+
+  .team__data {
+    gap: 1rem;
+  }
+
+  .team__title {
+    font-size: 1.5rem;
+  }
+
+  a.team__link {
+    font-size: 0.8rem;
+  }
+
+  .testimonial {
+    gap: 0.7rem;
+    padding: 1rem;
+    width: 90%;
+  }
+
+  .testiomnial__quotes {
+    width: 10px;
+  }
+
+  .testimonial__description {
+    font-size: 0.6rem;
+  }
+
+  .testimonial__box img {
+    width: 30px;
+  }
+
+  .testimonial__box h3 {
+    font-size: 0.6rem;
+  }
+  .testimonial__box span {
+    font-size: 0.5rem;
+  }
+
+  /* @@@@@@@@@@@@@@@@@@ contact @@@@@@@@@@@@@@@@@ */
+
+  .contact__container {
+    gap: 3rem;
+  }
+
+  .contact__title {
+    font-size: 1.5rem;
+  }
+
+  .contact__description {
+    font-size: 0.8rem;
+  }
+
+  .contact__form button {
+    font-size: 0.6rem;
+    width: 55%;
+  }
+
+  /* @@@@@@@@@@@@@@@@@@ footer @@@@@@@@@@@@@@@@@ */
+
+  .footer__logo svg {
+    width: 100px;
+  }
+
+  .footer__container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .footer__box a {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    margin: 4rem 0 0 0;
+  }
+
+  /* @@@@@@@@@@@@@@@@@@ header @@@@@@@@@@@@@@@@@ */
+
+  .nav {
+    height: 4rem;
+  }
+
+  .nav__list {
+    column-gap: 1.3rem;
+  }
+
+  .nav__logo {
+    width: 90px;
+  }
+
+  .nav__link {
+    font-size: 0.7rem;
+  }
+
+  /* @@@@@@@@@@@@@@@@@@ home @@@@@@@@@@@@@@@@@ */
+  .home__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    height: calc(100vh - 4rem);
+    align-content: center;
+  }
+
+  .home__data {
+    text-align: center;
+    gap: 1.5rem;
+    order: 2;
+  }
+
+  .home__title {
+    font-size: 1.5rem;
+  }
+
+  .home__form {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    margin: 0 auto;
+  }
+
+  .focus-input {
+    padding: 0.65rem;
+    font-size: 0.7rem;
+  }
+
+  .focus-sub {
+    font-size: 0.7rem;
+    text-align: start;
+  }
+
+  button {
+    font-size: 0.7rem;
+    padding: 0.7rem;
+  }
+
+  /* @@@@@@@@@@@@@@@@@@ team @@@@@@@@@@@@@@@@@ */
+  .top-bg {
+    background: url("./images/bg-curve-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: 100vw 53px;
+    width: 100vw;
+    height: 53px;
+    margin-top: 3rem;
+  }
+
+  .team__container {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .team__data {
+    order: 2;
+  }
+
+  .team__title {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .team__description {
+    font-size: 0.8rem;
+  }
+
+  a.team__link {
+    font-size: 0.9rem;
+    margin: 1rem auto;
+  }
+
+  .testimonial {
+    padding: 1.5rem;
+    margin: 0 auto;
+  }
+
+  .testiomnial__quotes {
+    width: 15px;
+  }
+
+  .testimonial__description {
+    font-size: 0.7rem;
+  }
+
+  /* @@@@@@@@@@@@@@@@@@ contact @@@@@@@@@@@@@@@@@ */
+
+  .contact {
+    padding: 4rem 0;
+  }
+
+  .contact__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .contact__title {
+    font-size: 1.3rem;
+  }
+
+  .contact__description {
+    font-size: 0.8rem;
+  }
+
+  .contact__form button {
+    font-size: 0.7rem;
+    width: 100%;
+  }
+
+  /* @@@@@@@@@@@@@@@@@@ footer @@@@@@@@@@@@@@@@@ */
+  footer {
+    padding: 3rem 0 5rem;
+  }
+
+  .footer__logo svg {
+    width: 150px;
+    margin-bottom: 2rem;
+  }
+
+  .footer__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2.5rem;
+  }
+
+  .footer__box a {
+    font-size: 0.8rem;
+  }
+
+  .footer__box .footer__social {
+    justify-content: center;
+  }
+}
